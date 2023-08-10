@@ -1,0 +1,27 @@
+.pd-hero-banner{
+    &__wrapper{
+        position: relative;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        z-index: 1;
+    }
+
+    &__wrapper::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: .6;
+        background-image: linear-gradient(160deg, var(--global-palette1, #3182CE) 0%, var(--global-palette2, #2B6CB0) 100%);
+        z-index: -1;
+    }
+
+    &__row{
+        align-items: center;
+        min-height: 300px;
+    }
+}

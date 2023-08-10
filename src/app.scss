@@ -1,0 +1,13 @@
+/** Bootstrap **/
+@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/functions.scss";
+@import "~bootstrap/scss/variables.scss";
+@import "~bootstrap/scss/mixins/breakpoints.scss";
+
+/** Components **/
+@import "sass/components/buttons";
+@import "sass/components/cards";
+@import "sass/components/hero-banner";
+
+/** Pages **/
+@import "sass/pages/evento";

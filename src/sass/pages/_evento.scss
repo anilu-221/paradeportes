@@ -1,0 +1,23 @@
+.pd-evento{
+    &__card{
+        background-color: #fff;
+        border-radius: 1rem;
+        padding: 1.5rem;
+    }
+
+    &__video iframe{
+        border-radius: 1rem;
+    }
+
+    &__fotos{
+        width: 100%;
+        height: auto;
+    }
+
+    &__wrapper-fotos{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #000;
+    }
+}
