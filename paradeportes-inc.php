@@ -18,11 +18,12 @@ define( 'PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 /** Requires */
+require_once PLUGIN_PATH . '/inc/acf-blocks/acf-blocks-settings.php';
 require_once PLUGIN_PATH . '/inc/custom-post-types.php';
 require_once PLUGIN_PATH . '/inc/files.php';
 require_once PLUGIN_PATH . '/inc/options-page.php';
+require_once PLUGIN_PATH . '/inc/template-paths.php';
 require_once PLUGIN_PATH . '/inc/theme-functions.php';
-require_once PLUGIN_PATH . '/inc/whatsapp-boton.php';
 
 /** Template Functions */
 require_once PLUGIN_PATH . '/inc/template-functions/hero-banner.php';

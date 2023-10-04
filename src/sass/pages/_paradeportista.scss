@@ -1,0 +1,27 @@
+.paradeportista{
+	&__card{
+		background-color: #fff;
+		box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+		border-radius: 1rem;
+		padding: 2rem;
+	}
+
+	&__card--img{
+		background-color: #fff;
+		box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+		border-radius: 1rem;
+		padding: 0;
+		overflow: hidden;
+	}
+
+	&__img{	
+		aspect-ratio: 1;
+		object-fit: cover;
+	}
+
+	&__bandera{
+		border-radius: 5px;
+		width: 65px;
+		height: auto;
+	}
+}

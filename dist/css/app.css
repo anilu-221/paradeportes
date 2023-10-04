@@ -10908,3 +10908,27 @@ textarea.form-control-lg {
   justify-content: center;
   background-color: #000;
 }
+
+.paradeportista__card {
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+.paradeportista__card--img {
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 1rem;
+  padding: 0;
+  overflow: hidden;
+}
+.paradeportista__img {
+  aspect-ratio: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.paradeportista__bandera {
+  border-radius: 5px;
+  width: 65px;
+  height: auto;
+}

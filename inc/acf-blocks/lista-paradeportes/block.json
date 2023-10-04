@@ -1,0 +1,28 @@
+{
+    "name": "paradeportes/lista-paradeportes",
+    "title": "Lista Paradeportes",
+    "description": "Lista de Lista Paradeportes",
+    "style": [ "file:./lista-paradeportes.css" ],
+    "category": "paradeportes",
+    "icon": "lista-paradeportes",
+    "keywords": ["paradeportes", "lista"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "lista-paradeportes.php"
+    },
+	"supports": {
+		"align": false,
+		"anchor": true,
+		"className": true,
+		"color": {
+			"background": true,
+			"text":	true
+		},
+		"html": false,
+		"spacing": {
+			"margin": [ "top", "bottom" ], 
+			"padding": true
+		}
+	}
+}
+
