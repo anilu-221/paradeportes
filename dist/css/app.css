@@ -10890,6 +10890,40 @@ textarea.form-control-lg {
 }
 
 /** Pages **/
+.catalogo__form {
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.catalogo__bandera {
+  -webkit-clip-path: circle();
+          clip-path: circle();
+  width: 60px;
+  height: auto;
+  margin-left: -12px;
+}
+@media (min-width: 992px) {
+  .catalogo__bandera {
+    margin: auto;
+  }
+}
+.catalogo__img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+@media (min-width: 992px) {
+  .catalogo__img {
+    border-radius: 0.5rem;
+    width: 60px;
+    height: auto;
+  }
+}
+.catalogo__table td {
+  text-align: center !important;
+  vertical-align: middle;
+}
+
 .pd-evento__card {
   background-color: #fff;
   border-radius: 1rem;
@@ -10928,7 +10962,25 @@ textarea.form-control-lg {
      object-fit: cover;
 }
 .paradeportista__bandera {
-  border-radius: 5px;
-  width: 65px;
+  -webkit-clip-path: circle();
+          clip-path: circle();
+  width: 80px;
   height: auto;
+  margin-left: -1rem;
+}
+.paradeportista__social-icons-container {
+  margin: 1.5rem 0;
+  display: flex;
+  gap: 1.5rem;
+}
+.paradeportista__social-icons-img {
+  height: 40px;
+  width: auto;
+}
+.paradeportista__deporte-logo {
+  padding: 5px;
+  border-radius: 10px;
+  width: 35px;
+  height: auto;
+  margin-right: 9px;
 }

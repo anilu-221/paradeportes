@@ -20,8 +20,28 @@
 	}
 
 	&__bandera{
-		border-radius: 5px;
-		width: 65px;
+		clip-path: circle();
+		width: 80px;
 		height: auto;
+		margin-left: -1rem;
+	}
+
+	&__social-icons-container{
+		margin: 1.5rem 0;
+		display: flex;
+		gap: 1.5rem;
+	}
+
+	&__social-icons-img{
+		height: 40px;
+		width: auto;
+	}
+
+	&__deporte-logo{
+		padding: 5px;
+		border-radius: 10px;
+		width: 35px;
+		height: auto;
+		margin-right: 9px;
 	}
 }

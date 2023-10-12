@@ -47,14 +47,17 @@ function paradeportes_archive_templates($archive){
 		}
 	}
 
-	/** Paradeportista Archive */
-	if( $post->post_type == 'paradeportista'){
-		if (file_exists( PLUGIN_PATH. '/template-parts/archives/archive-paradeportista.php')){
-			return PLUGIN_PATH. '/template-parts/archives/archive-paradeportista.php';
-		}
-	}
-
 	return $archive;
 }
 
 add_filter('archive_template', 'paradeportes_archive_templates');
+
+function paradeportes_page_template( $template ){
+	if ( is_page('paradeportistas') ) {
+		$template = PLUGIN_PATH. '/template-parts/pages/page-paradeportistas.php';
+	}
+
+	return $template;
+}
+
+add_filter('page_template', 'paradeportes_page_template');

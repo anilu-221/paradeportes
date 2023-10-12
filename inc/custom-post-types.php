@@ -50,7 +50,7 @@ function paradeportes_register_cpt() {
 		'show_in_nav_menus'   => true,
 		'menu_position'       => 5,
 		'capability_type'     => 'post',
-		'show_in_rest'        => false,
+		'show_in_rest'        => true,
 	);
 	register_post_type( 'paradeportista', $paradeportistas_args );
 
@@ -98,7 +98,7 @@ function paradeportes_register_cpt() {
 		'show_in_nav_menus'   => true,
 		'menu_position'       => 5,
 		'capability_type'     => 'post',
-		'show_in_rest'        => false,
+		'show_in_rest'        => true,
 	);
 	register_post_type( 'evento', $eventos_args );
 
@@ -134,12 +134,12 @@ function paradeportes_register_taxonomies() {
 		'show_tagcloud'      => true,
 		'show_in_quick_edit' => true,
 		'show_admin_column'  => false,
-		'show_in_rest'       => false,
+		'show_in_rest'       => true,
 		'has_archive'        => true,
 	);
 	register_taxonomy( 'categoria_paradeportista', array( 'paradeportista' ), $categoria_args );
 
-	// Discapacidad
+	// Discapacidad.
 	$discapacidad_label = array(
 		'name'              => _x( 'Discapacidad', 'taxonomy general name', 'paradeportes' ),
 		'singular_name'     => _x( 'Discapacidad', 'taxonomy singular name', 'paradeportes' ),
@@ -166,10 +166,10 @@ function paradeportes_register_taxonomies() {
 		'show_tagcloud'      => true,
 		'show_in_quick_edit' => true,
 		'show_admin_column'  => false,
-		'show_in_rest'       => false,
+		'show_in_rest'       => true,
 		'has_archive'        => true,
 	);
-	register_taxonomy( 'disciplina', array( 'paradeportista' ), $discapacidad_args );
+	register_taxonomy( 'discapacidad', array( 'paradeportista' ), $discapacidad_args );
 
 	// Nivel
 	$nivel_label = array(
@@ -198,7 +198,7 @@ function paradeportes_register_taxonomies() {
 		'show_tagcloud'      => true,
 		'show_in_quick_edit' => true,
 		'show_admin_column'  => false,
-		'show_in_rest'       => false,
+		'show_in_rest'       => true,
 		'has_archive'        => true,
 	);
 	register_taxonomy( 'nivel', array( 'paradeportista' ), $nivel_args );
@@ -230,7 +230,7 @@ function paradeportes_register_taxonomies() {
 		'show_tagcloud'      => true,
 		'show_in_quick_edit' => true,
 		'show_admin_column'  => false,
-		'show_in_rest'       => false,
+		'show_in_rest'       => true,
 		'has_archive'        => true,
 	);
 	register_taxonomy( 'pais', array( 'paradeportista' ), $pais_args );
@@ -262,7 +262,7 @@ function paradeportes_register_taxonomies() {
 		'show_tagcloud'      => true,
 		'show_in_quick_edit' => true,
 		'show_admin_column'  => false,
-		'show_in_rest'       => false,
+		'show_in_rest'       => true,
 		'has_archive'        =>  true,
 	);
 	register_taxonomy( 'paradeporte', array( 'post', 'evento', 'paradeportista' ), $paradeporte_args );

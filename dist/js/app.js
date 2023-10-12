@@ -3198,7 +3198,64 @@ function withinMaxClamp(min, value, max) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
+/* harmony import */ var _modules_paradeportistas__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/paradeportistas */ "./src/modules/paradeportistas.js");
 
+
+var paradeportistasConst = new _modules_paradeportistas__WEBPACK_IMPORTED_MODULE_1__["default"]();
+
+/***/ }),
+
+/***/ "./src/modules/paradeportistas.js":
+/*!****************************************!*\
+  !*** ./src/modules/paradeportistas.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+var paradeportistas = /*#__PURE__*/function () {
+  function paradeportistas() {
+    _classCallCheck(this, paradeportistas);
+    this.form = document.querySelector('#paradeportistas-formulario');
+    this.pais = document.querySelector('#pais');
+    this.paradeporte = document.querySelector('#paradeporte');
+    this.nivel = document.querySelector('#nivel');
+    this.categoria = document.querySelector('#categoria');
+    this.discapacidad = document.querySelector('#discapacidad');
+    if (this.form) {
+      this.events();
+    }
+  }
+  _createClass(paradeportistas, [{
+    key: "events",
+    value: function events() {
+      //Dropdowns
+      this.pais.addEventListener('change', this.selectOption.bind(this));
+      this.paradeporte.addEventListener('change', this.selectOption.bind(this));
+      this.nivel.addEventListener('change', this.selectOption.bind(this));
+      this.categoria.addEventListener('change', this.selectOption.bind(this));
+      this.discapacidad.addEventListener('change', this.selectOption.bind(this));
+    }
+
+    //Methods
+  }, {
+    key: "selectOption",
+    value: function selectOption(e) {
+      e.preventDefault();
+      this.form.submit();
+    }
+  }]);
+  return paradeportistas;
+}();
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (paradeportistas);
 
 /***/ }),
 

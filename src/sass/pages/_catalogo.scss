@@ -1,0 +1,33 @@
+.catalogo{
+	&__form{
+		gap: 1.5rem;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	&__bandera{
+		clip-path: circle();
+		width: 60px;
+		height: auto;
+		margin-left: -12px;
+		@include media-breakpoint-up(lg){
+			margin: auto;
+		}
+	}
+
+	&__img{
+		width: 100%;
+		height: auto;
+		border-radius: .5rem  .5rem 0 0;
+		@include media-breakpoint-up(lg){
+			border-radius: .5rem;
+			width: 60px;
+			height: auto;
+		}
+	}
+
+	&__table td{
+		text-align: center !important;
+		vertical-align: middle;
+	}
+}
