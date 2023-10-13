@@ -1,0 +1,16 @@
+/* Paradeportes Category Logo*/ 
+.dashicons-paradeportes-logo-svg{
+	background-image:url('../images/paradeportes-favicon.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+/** App List **/ 
+.dashicons-lista-paradeportes,
+.lista-paradeportes {
+	background-image:url('../images/tiktok-icon-01.svg');
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 24px;
+	height: 24px;
+}

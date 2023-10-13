@@ -8,3 +8,11 @@ function paradeportes_enqueue_files(){
 
 }
 add_action('wp_enqueue_scripts', 'paradeportes_enqueue_files');
+
+/**
+ * Admin scripts.
+ */
+function paradeportes_enqueue_admin_scripts() {
+	wp_enqueue_style( 'paradeportes-admin-styles', get_template_directory_uri() . '/src/admin/admin.css', array(), '1.0');
+}
+add_action( 'admin_enqueue_scripts', 'paradeportes_enqueue_admin_scripts' );
