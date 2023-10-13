@@ -10865,6 +10865,12 @@ textarea.form-control-lg {
   border-radius: 0 0 1rem 1rem;
   background-color: rgb(241, 240, 240);
 }
+.pd-gradient-line {
+  background-image: linear-gradient(2deg, var(--global-palette1, #0046e2) 0%, var(--global-palette2, #26d179) 100%);
+  min-height: 7px;
+  width: 100%;
+}
+
 .pd-hero-banner__wrapper {
   background-image: linear-gradient(170deg, var(--global-palette1, #0046e2) 0%, var(--global-palette2, #26d179) 100%);
 }
@@ -10873,7 +10879,57 @@ textarea.form-control-lg {
   min-height: 250px;
 }
 
+.paradeportes-pagination {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+.paradeportes-pagination .page-numbers {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  margin: 0 7px 15px 7px;
+  transition: all ease-in 0.2s;
+}
+.paradeportes-pagination .page-numbers.next {
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background-color: unset;
+}
+.paradeportes-pagination .page-numbers.prev {
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background-color: unset;
+}
+
+.paradeportes-pagination .page-numbers {
+  background-color: #f1f1f7;
+  color: #545c61;
+}
+
+.paradeportes-pagination .page-numbers.current {
+  background-color: #0046E2 !important;
+  color: #fff !important;
+}
+
+.paradeportes-pagination .page-numbers:hover {
+  background-color: #26D179;
+  color: #fff !important;
+}
+
 /** Pages **/
+.catalogo__th {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
 .catalogo__form {
   gap: 1.5rem;
   flex-wrap: wrap;
@@ -10882,7 +10938,7 @@ textarea.form-control-lg {
 .catalogo__bandera {
   -webkit-clip-path: circle();
           clip-path: circle();
-  width: 60px;
+  width: 70px;
   height: auto;
   margin-left: -12px;
 }
@@ -10895,11 +10951,13 @@ textarea.form-control-lg {
   width: 100%;
   height: auto;
   border-radius: 0.5rem 0.5rem 0 0;
+  margin: auto;
 }
 @media (min-width: 992px) {
   .catalogo__img {
-    border-radius: 0.5rem;
-    width: 60px;
+    -webkit-clip-path: circle();
+            clip-path: circle();
+    width: 70px;
     height: auto;
   }
 }

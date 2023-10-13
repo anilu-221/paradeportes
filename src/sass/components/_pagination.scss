@@ -1,0 +1,48 @@
+.paradeportes-pagination{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    
+    .page-numbers{
+        text-decoration: none;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        box-sizing: border-box;
+        margin: 0 7px 15px 7px;
+        transition: all ease-in .2s;
+    }
+
+    .page-numbers.next{
+        width: auto;
+        height: auto;
+        border-radius: 0;
+        background-color: unset;
+    }
+
+    .page-numbers.prev {
+        width: auto;
+        height: auto;
+        border-radius: 0;
+        background-color: unset;
+    }
+} 
+
+.paradeportes-pagination .page-numbers{
+    background-color: #f1f1f7;
+	color: #545c61;
+}
+
+.paradeportes-pagination .page-numbers.current{
+    background-color: #0046E2 !important;
+	color: #fff !important;
+}
+
+.paradeportes-pagination .page-numbers:hover{
+    background-color: #26D179;
+	color: #fff !important;
+}

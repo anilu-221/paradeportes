@@ -26,6 +26,7 @@ require_once PLUGIN_PATH . '/inc/theme-functions.php';
 
 /** Template Functions */
 require_once PLUGIN_PATH . '/inc/template-functions/hero-banner.php';
+require_once PLUGIN_PATH . '/inc/template-functions/gradient-line.php';
 
 /**
  * Display social icons
@@ -93,7 +94,6 @@ add_filter( 'query_vars', 'paradeportes_custom_query_var' );
  * @param object $custom_query wp_query obj.
  */
 function paradeportes_custom_number_pagination( $custom_query ) {
-	echo '<div class="py-3 text-center paradeportes-pagination">';
 	$big   = 9999999;
 	$links = paginate_links(
 		array(
@@ -105,6 +105,5 @@ function paradeportes_custom_number_pagination( $custom_query ) {
 			'next_text' => false,
 		)
 	);
-	echo wp_kses_post( $links );
-	echo '</div>';
+	return $links;
 };

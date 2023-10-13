@@ -25,6 +25,8 @@ $twitter    = get_field( 'twitter' );
 $tiktok     = get_field( 'tiktok' );
 $producto   = get_field( 'producto_asociado' );
 ?>
+<!--Gradient Line-->
+<?php paradeportes_gradient_line(); ?>
 
 <div class="container my-5">
 	<!--Player Header--> 
