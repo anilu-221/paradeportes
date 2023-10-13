@@ -56,28 +56,28 @@ function paradeportes_register_cpt() {
 
 	/** Eventos */
 	$eventos_labels = array(
-			'name' => _x( 'Eventos', 'Post Type General Name', 'paradeportes' ),
-			'singular_name'         => _x( 'Evento', 'Post Type Singular Name', 'paradeportes' ),
-			'menu_name'             => _x( 'Eventos', 'Admin Menu text', 'paradeportes' ),
-			'name_admin_bar'        => _x( 'Evento', 'Add New on Toolbar', 'paradeportes' ),
-			'archives'              => __( 'Evento', 'paradeportes' ),
-			'attributes'            => __( 'Evento', 'paradeportes' ),
-			'parent_item_colon'     => __( 'Evento', 'paradeportes' ),
-			'all_items'             => __( 'Todos los Eventos', 'paradeportes' ),
-			'add_new_item'          => __( 'Nuevo Evento', 'paradeportes' ),
-			'add_new'               => __( 'Agregar Nuevo', 'paradeportes' ),
-			'new_item'              => __( 'Nuevo Evento', 'paradeportes' ),
-			'edit_item'             => __( 'Editar Evento', 'paradeportes' ),
-			'update_item'           => __( 'Actualizar Evento', 'paradeportes' ),
-			'view_item'             => __( 'Ver Evento', 'paradeportes' ),
-			'view_items'            => __( 'Ver Eventos', 'paradeportes' ),
-			'search_items'          => __( 'Buscar Evento', 'paradeportes' ),
-			'not_found'             => __( 'No encontrado', 'paradeportes' ),
-			'not_found_in_trash'    => __( 'No encontrado en basura', 'paradeportes' ),
-			'featured_image'        => __( 'Imagen Personalizada', 'paradeportes' ),
-			'set_featured_image'    => __( 'Agregar Imagen Personalizada', 'paradeportes' ),
-			'remove_featured_image' => __( 'Borrar Imagen Personalizada', 'paradeportes' ),
-		);
+		'name'                  => _x( 'Eventos', 'Post Type General Name', 'paradeportes' ),
+		'singular_name'         => _x( 'Evento', 'Post Type Singular Name', 'paradeportes' ),
+		'menu_name'             => _x( 'Eventos', 'Admin Menu text', 'paradeportes' ),
+		'name_admin_bar'        => _x( 'Evento', 'Add New on Toolbar', 'paradeportes' ),
+		'archives'              => __( 'Evento', 'paradeportes' ),
+		'attributes'            => __( 'Evento', 'paradeportes' ),
+		'parent_item_colon'     => __( 'Evento', 'paradeportes' ),
+		'all_items'             => __( 'Todos los Eventos', 'paradeportes' ),
+		'add_new_item'          => __( 'Nuevo Evento', 'paradeportes' ),
+		'add_new'               => __( 'Agregar Nuevo', 'paradeportes' ),
+		'new_item'              => __( 'Nuevo Evento', 'paradeportes' ),
+		'edit_item'             => __( 'Editar Evento', 'paradeportes' ),
+		'update_item'           => __( 'Actualizar Evento', 'paradeportes' ),
+		'view_item'             => __( 'Ver Evento', 'paradeportes' ),
+		'view_items'            => __( 'Ver Eventos', 'paradeportes' ),
+		'search_items'          => __( 'Buscar Evento', 'paradeportes' ),
+		'not_found'             => __( 'No encontrado', 'paradeportes' ),
+		'not_found_in_trash'    => __( 'No encontrado en basura', 'paradeportes' ),
+		'featured_image'        => __( 'Imagen Personalizada', 'paradeportes' ),
+		'set_featured_image'    => __( 'Agregar Imagen Personalizada', 'paradeportes' ),
+		'remove_featured_image' => __( 'Borrar Imagen Personalizada', 'paradeportes' ),
+	);
 
 	$eventos_args = array(
 		'label'               => __( 'Evento', 'paradeportes' ),
@@ -107,7 +107,7 @@ add_action( 'init', 'paradeportes_register_cpt', 0 );
 
 /**Taxonomies */
 function paradeportes_register_taxonomies() {
-	// Categoría
+	// Categoría.
 	$categoria_label = array(
 		'name'              => _x( 'Cateogría', 'taxonomy general name', 'paradeportes' ),
 		'singular_name'     => _x( 'Cateogría', 'taxonomy singular name', 'paradeportes' ),
@@ -171,7 +171,7 @@ function paradeportes_register_taxonomies() {
 	);
 	register_taxonomy( 'discapacidad', array( 'paradeportista' ), $discapacidad_args );
 
-	// Nivel
+	// Nivel.
 	$nivel_label = array(
 		'name'              => _x( 'Nivel', 'taxonomy general name', 'paradeportes' ),
 		'singular_name'     => _x( 'Nivel', 'taxonomy singular name', 'paradeportes' ),
@@ -203,7 +203,7 @@ function paradeportes_register_taxonomies() {
 	);
 	register_taxonomy( 'nivel', array( 'paradeportista' ), $nivel_args );
 
-	// Pais
+	// Pais.
 	$pais_label = array(
 		'name'              => _x( 'País', 'taxonomy general name', 'paradeportes' ),
 		'singular_name'     => _x( 'País', 'taxonomy singular name', 'paradeportes' ),
@@ -235,7 +235,7 @@ function paradeportes_register_taxonomies() {
 	);
 	register_taxonomy( 'pais', array( 'paradeportista' ), $pais_args );
 
-	// Paradeporte
+	// Paradeporte.
 	$paradeporte_label = array(
 		'name'              => _x( 'Paradeportes', 'taxonomy general name', 'paradeportes' ),
 		'singular_name'     => _x( 'Paradeporte', 'taxonomy singular name', 'paradeportes' ),
@@ -263,7 +263,7 @@ function paradeportes_register_taxonomies() {
 		'show_in_quick_edit' => true,
 		'show_admin_column'  => false,
 		'show_in_rest'       => true,
-		'has_archive'        => true,
+		'has_archive'        => false,
 	);
 	register_taxonomy( 'paradeporte', array( 'post', 'evento', 'paradeportista' ), $paradeporte_args );
 }

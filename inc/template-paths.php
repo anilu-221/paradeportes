@@ -5,8 +5,12 @@
  * @package paradeportes
  */
 
-/** Single Templates */
-function paradeportes_single_templates ( $single ) {
+/**
+ * Single Templates
+ *
+ * @param string $single single template.
+ */
+function paradeportes_single_templates( $single ) {
 	global $post;
 	/** Evento Single */
 	if ( 'evento' === $post->post_type ) {
@@ -24,40 +28,35 @@ function paradeportes_single_templates ( $single ) {
 	return $single;
 }
 
-add_filter('single_template', 'paradeportes_single_templates');
+add_filter( 'single_template', 'paradeportes_single_templates' );
 
-/** Archive Templates */
-
-function paradeportes_archive_templates($archive){
+/**
+ * Single Templates
+ *
+ * @param string $archive archive template.
+ */
+function paradeportes_archive_templates( $archive ) {
 	global $post;
-	/** Deporte Tax Single */
-	if(is_tax( 'deporte' )){
-		//  return PLUGIN_PATH . '/template-parts/archives/archive-deporte.php';
-	}
-
-	/** Deporte Tax Single */
-	if(is_archive( 'deporte' )){
-		// return PLUGIN_PATH . '/template-parts/archives/archive-deporte.php';
-	}
-
 	/** Evento Archive */
-	if( $post->post_type == 'evento'){
-		if (file_exists( PLUGIN_PATH. '/template-parts/archives/archive-evento.php')){
-			return PLUGIN_PATH. '/template-parts/archives/archive-evento.php';
+	if ( 'evento' === $post->post_type ) {
+		if ( file_exists( PLUGIN_PATH . '/template-parts/archives/archive-evento.php' ) ) {
+			return PLUGIN_PATH . '/template-parts/archives/archive-evento.php';
 		}
 	}
-
 	return $archive;
 }
+add_filter( 'archive_template', 'paradeportes_archive_templates' );
 
-add_filter('archive_template', 'paradeportes_archive_templates');
-
-function paradeportes_page_template( $template ){
-	if ( is_page('paradeportistas') ) {
-		$template = PLUGIN_PATH. '/template-parts/pages/page-paradeportistas.php';
+/**
+ * Template for Paradeportistas Page
+ *
+ * @param string $template template variable.
+ */
+function paradeportes_page_template( $template ) {
+	if ( is_page( 'paradeportistas' ) ) {
+		$template = PLUGIN_PATH . '/template-parts/pages/page-paradeportistas.php';
 	}
-
 	return $template;
 }
 
-add_filter('page_template', 'paradeportes_page_template');
+add_filter( 'page_template', 'paradeportes_page_template' );

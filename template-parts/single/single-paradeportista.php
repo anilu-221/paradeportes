@@ -51,7 +51,7 @@ $producto   = get_field( 'producto_asociado' );
 				<!--Body--> 
 				<div class="py-2 px-4">
 					<!--Name Mobile--> 
-					 <h1 class="d-lg-none"><?php the_title(); ?></h1>
+					<h1 class="d-lg-none"><?php the_title(); ?></h1>
 					<!--Country--> 
 						<?php
 						if ( $paises ) {
@@ -130,7 +130,7 @@ $producto   = get_field( 'producto_asociado' );
 							if ( $logo ) {
 								?>
 								<div class="d-flex mt-3">
-									<?php 
+									<?php
 									echo wp_get_attachment_image(
 										$logo,
 										'Medium',
@@ -210,7 +210,7 @@ $producto   = get_field( 'producto_asociado' );
 				?>
 				<div class="paradeportista__card">
 					<!--Biografía-->
-					<?php echo $biografia; ?>
+					<?php echo wp_kses_post( $biografia ); ?>
 				</div>
 				<?php
 			}

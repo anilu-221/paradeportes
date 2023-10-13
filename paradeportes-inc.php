@@ -21,43 +21,49 @@ define( 'PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 require_once PLUGIN_PATH . '/inc/acf-blocks/acf-blocks-settings.php';
 require_once PLUGIN_PATH . '/inc/custom-post-types.php';
 require_once PLUGIN_PATH . '/inc/files.php';
-require_once PLUGIN_PATH . '/inc/options-page.php';
 require_once PLUGIN_PATH . '/inc/template-paths.php';
 require_once PLUGIN_PATH . '/inc/theme-functions.php';
 
 /** Template Functions */
 require_once PLUGIN_PATH . '/inc/template-functions/hero-banner.php';
 
-/** Displays social icons */
-function paradeportes_display_social_icons ( $instagram, $facebook, $twitter, $tiktok ) {
+/**
+ * Display social icons
+ *
+ * @param string $instagram instagram url.
+ * @param string $facebook facebook url.
+ * @param string $twitter twitter url.
+ * @param string $tiktok tiktok url.
+ */
+function paradeportes_display_social_icons( $instagram, $facebook, $twitter, $tiktok ) {
 	?>
 	<div class="paradeportista__social-icons-container">
-		<?php 
+		<?php
 		if ( $instagram ) {
 			?>
 			<a href="<?php echo esc_url( $instagram ); ?>">
-				<img class="paradeportista__social-icons-img" src="<?php echo PLUGIN_URL . 'src/images/instagram-icon-01.svg' ?>" alt="Instagram Logo">
+				<img class="paradeportista__social-icons-img" src="<?php echo esc_url( PLUGIN_URL . 'src/images/instagram-icon-01.svg' ); ?>" alt="Instagram Logo">
 			</a>
 			<?php
 		}
 		if ( $facebook ) {
 			?>
 			<a href="<?php echo esc_url( $facebook ); ?>">
-				<img class="paradeportista__social-icons-img" src="<?php echo PLUGIN_URL . 'src/images/facebook-icon-01.svg' ?>" alt="Facebook Logo">
+				<img class="paradeportista__social-icons-img" src="<?php echo esc_url( PLUGIN_URL . 'src/images/facebook-icon-01.svg' ); ?>" alt="Facebook Logo">
 			</a>
 			<?php
 		}
 		if ( $twitter ) {
 			?>
 			<a href="<?php echo esc_url( $twitter ); ?>">
-				<img class="paradeportista__social-icons-img" src="<?php echo PLUGIN_URL . 'src/images/x-t-icon-01.svg' ?>" alt="Twitter Logo">
+				<img class="paradeportista__social-icons-img" src="<?php echo esc_url( PLUGIN_URL . 'src/images/x-t-icon-01.svg' ); ?>" alt="Twitter Logo">
 			</a>
 			<?php
 		}
 		if ( $tiktok ) {
 			?>
 			<a href="<?php echo esc_url( $tiktok ); ?>">
-				<img class="paradeportista__social-icons-img" src="<?php echo PLUGIN_URL . 'src/images/tiktok-icon-01.svg' ?>" alt="Tiktok Logo">
+				<img class="paradeportista__social-icons-img" src="<?php echo esc_url( PLUGIN_URL . 'src/images/tiktok-icon-01.svg' ); ?>" alt="Tiktok Logo">
 			</a>
 			<?php
 		}
@@ -66,32 +72,39 @@ function paradeportes_display_social_icons ( $instagram, $facebook, $twitter, $t
 	<?php
 }
 
-/**Query Vars */
-function paradeportes_custom_query_var($query_vars)
-{
-    $query_vars[] = 'pais';
-	$query_vars[] = 'paradeporte';
-	$query_vars[] = 'nivel';
-	$query_vars[] = 'categoria_p';
-	$query_vars[] = 'discapacidad';
-    return $query_vars;
+/**
+ * Query Vars
+ *
+ * @param array $vars query vars.
+ */
+function paradeportes_custom_query_var( $vars ) {
+	$vars[] = 'pais';
+	$vars[] = 'paradeporte';
+	$vars[] = 'nivel';
+	$vars[] = 'categoria_p';
+	$vars[] = 'discapacidad';
+	return $vars;
 }
-add_filter('query_vars', 'paradeportes_custom_query_var');
+add_filter( 'query_vars', 'paradeportes_custom_query_var' );
 
-/** Pagination */
-function paradeportes_custom_number_pagination($custom_query) {
+/**
+ * Pagination
+ *
+ * @param object $custom_query wp_query obj.
+ */
+function paradeportes_custom_number_pagination( $custom_query ) {
 	echo '<div class="py-3 text-center paradeportes-pagination">';
-
-	$big = 9999999;
-	echo paginate_links( array(
-			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-			'format' => '?paged=%#%',
-			'current' => max( 1, get_query_var('paged') ),
-			'total' => $custom_query->max_num_pages,
-			'prev_next' =>  false,
-			'next_text' =>  false,
+	$big   = 9999999;
+	$links = paginate_links(
+		array(
+			'base'      => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+			'format'    => '?paged=%#%',
+			'current'   => max( 1, get_query_var( 'paged' ) ),
+			'total'     => $custom_query->max_num_pages,
+			'prev_next' => false,
+			'next_text' => false,
 		)
 	);
-	
+	echo wp_kses_post( $links );
 	echo '</div>';
 };

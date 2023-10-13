@@ -1,13 +1,23 @@
-<?php get_header(); 
+<?php
+/**
+ *
+ * Template Name: Archive for deporte
+ *
+ * @package paradeportes
+ */
+
+get_header();
+
 /** Variables */
-$taxonomy = get_query_var( 'taxonomy' );
-$term = get_query_var( 'term' );
-$term_id = get_term($term)->term_id;
-$image = get_field('deporte_img', $taxonomy.'_'.$term_id);
-$image = wp_get_attachment_image_url( $image, 'full', false );
+$taxonomy_pd = get_query_var( 'taxonomy' );
+$term_pd     = get_query_var( 'term' );
+$term_id     = get_term( $term_pd )->term_id;
+$image       = get_field( 'deporte_img', $taxonomy_pd . '_' . $term_id );
+$image       = wp_get_attachment_image_url( $image, 'full', false );
 ?>
 
 <!--Hero Banner--> 
-<?php paradeportes_hero_banner($image, get_the_archive_title()); ?>
+<?php paradeportes_hero_banner( get_the_archive_title() ); ?>
 
-<?php get_footer();
+<?php
+get_footer();
