@@ -41,7 +41,7 @@ function paradeportes_register_cpt() {
 		'hierarchical'        => false,
 		'exclude_from_search' => false,
 		'publicly_queryable'  => true,
-		'has_archive'         => true,
+		'has_archive'         => false,
 		'public'              => true,
 		'show_ui'             => true,
 		'show_in_menu'        => true,
@@ -135,7 +135,7 @@ function paradeportes_register_taxonomies() {
 		'show_in_quick_edit' => true,
 		'show_admin_column'  => false,
 		'show_in_rest'       => true,
-		'has_archive'        => true,
+		'has_archive'        => false,
 	);
 	register_taxonomy( 'categoria_paradeportista', array( 'paradeportista' ), $categoria_args );
 
@@ -167,7 +167,7 @@ function paradeportes_register_taxonomies() {
 		'show_in_quick_edit' => true,
 		'show_admin_column'  => false,
 		'show_in_rest'       => true,
-		'has_archive'        => true,
+		'has_archive'        => false,
 	);
 	register_taxonomy( 'discapacidad', array( 'paradeportista' ), $discapacidad_args );
 
@@ -199,7 +199,7 @@ function paradeportes_register_taxonomies() {
 		'show_in_quick_edit' => true,
 		'show_admin_column'  => false,
 		'show_in_rest'       => true,
-		'has_archive'        => true,
+		'has_archive'        => false,
 	);
 	register_taxonomy( 'nivel', array( 'paradeportista' ), $nivel_args );
 
@@ -231,7 +231,7 @@ function paradeportes_register_taxonomies() {
 		'show_in_quick_edit' => true,
 		'show_admin_column'  => false,
 		'show_in_rest'       => true,
-		'has_archive'        => true,
+		'has_archive'        => false,
 	);
 	register_taxonomy( 'pais', array( 'paradeportista' ), $pais_args );
 
@@ -263,7 +263,7 @@ function paradeportes_register_taxonomies() {
 		'show_in_quick_edit' => true,
 		'show_admin_column'  => false,
 		'show_in_rest'       => true,
-		'has_archive'        =>  true,
+		'has_archive'        => true,
 	);
 	register_taxonomy( 'paradeporte', array( 'post', 'evento', 'paradeportista' ), $paradeporte_args );
 }
