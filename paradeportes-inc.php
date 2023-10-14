@@ -25,6 +25,9 @@ require_once PLUGIN_PATH . '/inc/template-paths.php';
 require_once PLUGIN_PATH . '/inc/theme-functions.php';
 
 /** Template Functions */
+require_once PLUGIN_PATH . '/inc/template-functions/eventos-card.php';
+require_once PLUGIN_PATH . '/inc/template-functions/paradeportista-card.php';
+require_once PLUGIN_PATH . '/inc/template-functions/posts-card.php';
 require_once PLUGIN_PATH . '/inc/template-functions/hero-banner.php';
 require_once PLUGIN_PATH . '/inc/template-functions/gradient-line.php';
 

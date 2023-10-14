@@ -10544,6 +10544,17 @@ textarea.form-control-lg {
 .pd-card__image:hover {
   filter: brightness(0.8);
 }
+.pd-card__image-paradeportista {
+  border-radius: 1rem 1rem 0 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  aspect-ratio: 1/1;
+  transition: filter 100ms ease-in;
+}
+.pd-card__image-paradeportista:hover {
+  filter: brightness(0.8);
+}
 .pd-card__body {
   padding: 1.5rem 1rem;
   border-radius: 0 0 1rem 1rem;
@@ -10725,6 +10736,20 @@ textarea.form-control-lg {
 }
 .pd-evento__badge-wrapper:hover .badge {
   background-color: #0046E2 !important;
+}
+
+.paradeporte__logo {
+  width: 40px;
+  height: auto;
+  display: inline;
+}
+@media (min-width: 992px) {
+  .paradeporte__logo {
+    width: 60px;
+  }
+}
+.paradeporte__descripcion {
+  margin-top: -1rem;
 }
 
 .paradeportista__card {

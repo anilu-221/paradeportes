@@ -1,0 +1,14 @@
+.paradeporte{
+	&__logo{
+		width: 40px;
+		height: auto;
+		display: inline;
+		@include media-breakpoint-up(lg){
+			width: 60px;
+		}
+	}
+
+	&__descripcion{
+		margin-top: -1rem;
+	}
+}
