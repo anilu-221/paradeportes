@@ -14,15 +14,15 @@ get_header();
 <div class="container">
 	<div class="row">
 		<div class="col-12 my-5">
-			<div class="container">
+			<div class="container catalogo__wrapper">
 				<div class="row">
 					<!--Filtros--> 
-						<div class="col-12 mb-4">
+						<div class="col-12 bg-dark text-white py-4 px-5 catalogo__filtros">
 							<form id="paradeportistas-formulario" action="/paradeportistas" class="d-flex catalogo__form">
 								<!--Pais--> 
-								<div class="d-flex flex-column">
+								<div class="d-flex flex-column catalogo__select-container">
 									<label class="h4 me-2" for="pais">País</label>
-									<select name="pais" id="pais">
+									<select class="catalogo__select" name="pais" id="pais">
 										<?php
 										$current_pais = '';
 										$paises       = get_terms(
@@ -63,9 +63,9 @@ get_header();
 									</select>
 								</div>
 								<!--Paradeporte--> 
-								<div class="d-flex flex-column">
+								<div class="d-flex flex-column catalogo__select-container">
 									<label class="h4 me-2" for="paradeporte">Paradeporte</label>
-									<select name="paradeporte" id="paradeporte">
+									<select class="catalogo__select" name="paradeporte" id="paradeporte">
 										<?php
 										$current_paradeporte = '';
 										$paradeportes        = get_terms(
@@ -105,9 +105,9 @@ get_header();
 								</div>
 
 								<!--Nivel--> 
-								<div class="d-flex flex-column">
+								<div class="d-flex flex-column catalogo__select-container">
 									<label class="h4 me-2" for="nivel">Nivel</label>
-									<select name="nivel" id="nivel">
+									<select class="catalogo__select" name="nivel" id="nivel">
 										<?php
 										$current_nivel = '';
 										$niveles       = get_terms(
@@ -147,9 +147,9 @@ get_header();
 								</div>
 
 								<!--Categoria--> 
-								<div class="d-flex flex-column">
+								<div class="d-flex flex-column catalogo__select-container">
 									<label class="h4 me-2" for="categoria">Categoria</label>
-									<select name="categoria_paradeportista" id="categoria">
+									<select class="catalogo__select" name="categoria_paradeportista" id="categoria">
 										<?php
 										$current_categoria = '';
 										$categorias        = get_terms(
@@ -189,9 +189,9 @@ get_header();
 								</div>
 
 								<!--Discapacidad--> 
-								<div class="d-flex flex-column">
+								<div class="d-flex flex-column catalogo__select-container">
 									<label class="h4 me-2" for="discapacidad">Discapacidad</label>
-									<select name="discapacidad" id="discapacidad">
+									<select class="catalogo__select" name="discapacidad" id="discapacidad">
 										<?php
 										$current_discapacidad = '';
 										$discapacidades       = get_terms(
@@ -313,7 +313,7 @@ get_header();
 						$paged_pd             = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 						$paradeportistas_args = array(
 							'post_type'      => 'paradeportista',
-							'posts_per_page' => 1,
+							'posts_per_page' => 20,
 							'paged'          => $paged_pd,
 							'orderby'        => 'title',
 							'order'          => 'ASC',
@@ -330,13 +330,13 @@ get_header();
 						$paradeportistas_query = new WP_Query( $paradeportistas_args );
 						?>
 					<!--Desktop--> 
-						<div class="d-none d-lg-block p-0 rounded shadow" style="overflow:clip">
+						<div class="d-none d-lg-block p-0" style="overflow:clip">
 							<?php
 							$paradeportistas_count = $paradeportistas_query->found_posts;
 							?>
 							<!--Table--> 
 								<table class="table catalogo__table bg-white">
-									<thead class="bg-dark text-white">
+									<thead class="bg-primary text-white">
 										<tr class="text-center">
 											<th class="catalogo__th" scope="col"></th>
 											<th class="catalogo__th" scope="col">Paradeportista</th>
@@ -521,7 +521,7 @@ get_header();
 									$paradeportes             = get_the_terms( get_the_ID(), 'paradeporte' );
 									$categoria_paradeportista = get_the_terms( get_the_ID(), 'categoria_paradeportista' );
 									?>
-									<div class="row p-0 rounded shadow bg-white my-3">
+									<div class="row p-0 rounded shadow bg-white my-5">
 										<div class="col-12 p-0">
 											<!--Image--> 
 											<?php
