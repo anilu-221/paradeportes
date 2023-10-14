@@ -10476,6 +10476,31 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+/**Base**/
+.primary-hover:hover {
+  background-color: #0046E2;
+}
+
+.secondary-hover:hover {
+  background-color: #26D179;
+}
+
+.dark-hover:hover {
+  background-color: #171D29 !important;
+}
+
+.primary-hover-text:hover {
+  color: #0046E2;
+}
+
+.secondary-hover-text:hover {
+  color: #26D179;
+}
+
+.dark-hover-text:hover {
+  color: #171D29 !important;
+}
+
 /** Components **/
 .pd-btn__whatsapp {
   position: fixed;
@@ -10486,14 +10511,13 @@ textarea.form-control-lg {
   z-index: 999;
 }
 
-.pd-card__xwrapper {
+.pd-card__wrapper {
+  background-color: #fff;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 1rem;
+  height: 100%;
   display: flex;
   flex-direction: column;
-}
-@media (min-width: 992px) {
-  .pd-card__xwrapper {
-    justify-content: space-between;
-  }
 }
 .pd-card__col {
   margin-top: 0;
@@ -10515,11 +10539,14 @@ textarea.form-control-lg {
      object-fit: cover;
   width: 100%;
   aspect-ratio: 5/3;
+  transition: filter 100ms ease-in;
+}
+.pd-card__image:hover {
+  filter: brightness(0.8);
 }
 .pd-card__body {
   padding: 1.5rem 1rem;
   border-radius: 0 0 1rem 1rem;
-  background-color: rgb(241, 240, 240);
 }
 .pd-gradient-line {
   background-image: linear-gradient(2deg, var(--global-palette1, #0046e2) 0%, var(--global-palette2, #26d179) 100%);
@@ -10685,6 +10712,19 @@ textarea.form-control-lg {
   align-items: center;
   justify-content: center;
   background-color: #000;
+}
+.pd-evento__badge-wrapper-col {
+  margin-top: -1.25rem;
+}
+.pd-evento__badge-wrapper {
+  display: inline-block !important;
+}
+.pd-evento__badge-wrapper p {
+  display: inline-block !important;
+  font-size: 1.5rem;
+}
+.pd-evento__badge-wrapper:hover .badge {
+  background-color: #0046E2 !important;
 }
 
 .paradeportista__card {

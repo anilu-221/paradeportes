@@ -2,6 +2,9 @@
 @import 'sass/base/bootstrap_variables.scss';
 @import "~bootstrap/scss/bootstrap";
 
+/**Base**/
+@import 'sass/base/base.scss';
+
 /** Components **/
 @import "sass/components/buttons";
 @import "sass/components/cards";

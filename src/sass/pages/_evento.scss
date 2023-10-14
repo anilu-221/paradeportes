@@ -20,4 +20,21 @@
         justify-content: center;
         background-color: #000;
     }
+
+	&__badge-wrapper-col{
+		margin-top: -1.25rem;
+	}
+
+	&__badge-wrapper{
+		display: inline-block !important;
+	}
+
+	&__badge-wrapper p{
+		display: inline-block !important;
+		font-size: 1.5rem;
+	}
+
+	&__badge-wrapper:hover .badge{
+		background-color: $primary !important;
+	}
 }

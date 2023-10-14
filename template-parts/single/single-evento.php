@@ -9,12 +9,13 @@
 get_header();
 
 /** Variables */
-$bg_img_url  = get_the_post_thumbnail_url( get_the_ID(), 'full' );
-$fecha       = get_field( 'fecha' );
-$content     = get_the_title() . '<br> <p class="h3">' . $fecha . '</p>';
-$descripcion = get_field( 'descripcion' );
-$videos      = get_field( 'videos' );
-$fotos       = get_field( 'fotos' );
+$bg_img_url   = get_the_post_thumbnail_url( get_the_ID(), 'full' );
+$fecha        = get_field( 'fecha' );
+$descripcion  = get_field( 'descripcion' );
+$videos       = get_field( 'videos' );
+$fotos        = get_field( 'fotos' );
+$paradeportes = get_the_terms( get_the_id(), 'paradeporte' );
+$content      = get_the_title() . '<br> <p class="h3">' . $fecha . '</p>';
 ?>
 
 <!--Hero Banner--> 
@@ -23,7 +24,28 @@ $fotos       = get_field( 'fotos' );
 <!--Description--> 
 	<div class="container">
 		<div class="row">
-			<div class="col-12 pd-evento__card my-5 shadow">
+			<div class="col-12 pd-evento__badge-wrapper-col">
+				<?php
+				if ( $paradeportes ) {
+					foreach ( $paradeportes as $paradeporte ) {
+						$p_id = $paradeporte->term_id;
+						$name = $paradeporte->name;
+						?>
+						<div class="pd-evento__badge-wrapper">
+							<p>
+								<a href="<?php echo esc_url( get_term_link( $p_id ) ); ?>">
+									<span class="badge bg-dark">
+										<?php echo esc_html( $name ); ?>
+									</span>
+								</a>
+							</p>
+						</div>
+						<?php
+					}
+				}
+				?>
+			</div>
+			<div class="col-12 pd-evento__card my-4 shadow">
 				<?php echo wp_kses_post( $descripcion ); ?>
 			</div>
 		</div>
@@ -48,7 +70,7 @@ $fotos       = get_field( 'fotos' );
 					foreach ( $videos as $video ) {
 						?>
 						<div class="col-lg-6 my-3 pd-evento__video">
-							<?php echo esc_url( $video['video_url'] ); ?>
+							<?php echo $video['video_url']; //phpcs:ignore ?>
 						</div>
 						<?php
 					}

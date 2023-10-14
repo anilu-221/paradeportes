@@ -89,7 +89,9 @@ $eventos_anteriores_query = new WP_Query( $eventos_anteriores_args );
 													$deportes = get_the_terms( get_the_ID(), 'deporte' );
 													foreach ( $deportes as $deporte ) {
 														?>
-															<p class="d-inline"><span class="badge bg-primary me-2"><?php echo esc_html( $deporte->name ); ?></span></p>
+															<a class="text-decoration-none" href="<?php echo esc_url( get_term_link( $deporte->term_id ) ); ?>">
+																<p class="d-inline"><span class="badge dark-hover bg-primary me-2"><?php echo esc_html( $deporte->name ); ?></span></p>
+															</a>
 														<?php
 													}
 													?>
@@ -158,7 +160,9 @@ $eventos_anteriores_query = new WP_Query( $eventos_anteriores_args );
 													if ( $deportes ) {
 														foreach ( $deportes as $deporte ) {
 															?>
-																<p class="d-inline"><span class="badge bg-primary me-2"><?php echo esc_html( $deporte->name ); ?></span></p>
+																<a class="text-decoration-none" href="<?php echo esc_url( get_term_link( $deporte->term_id ) ); ?>">
+																	<p class="d-inline"><span class="badge dark-hover bg-primary me-2"><?php echo esc_html( $deporte->name ); ?></span></p>
+																</a>
 															<?php
 														}
 													}

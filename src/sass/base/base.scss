@@ -1,0 +1,23 @@
+.primary-hover:hover{
+	background-color: $primary;
+}
+
+.secondary-hover:hover{
+	background-color: $secondary;
+}
+
+.dark-hover:hover{
+	background-color: $dark !important;
+}
+
+.primary-hover-text:hover{
+	color: $primary;
+}
+
+.secondary-hover-text:hover{
+	color: $secondary;
+}
+
+.dark-hover-text:hover{
+	color: $dark !important;
+}
