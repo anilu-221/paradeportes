@@ -10478,11 +10478,11 @@ textarea.form-control-lg {
 }
 /**Base**/
 .primary-hover:hover {
-  background-color: #0046E2;
+  background-color: #0046E2 !important;
 }
 
 .secondary-hover:hover {
-  background-color: #26D179;
+  background-color: #26D179 !important;
 }
 
 .dark-hover:hover {
@@ -10490,11 +10490,11 @@ textarea.form-control-lg {
 }
 
 .primary-hover-text:hover {
-  color: #0046E2;
+  color: #0046E2 !important;
 }
 
 .secondary-hover-text:hover {
-  color: #26D179;
+  color: #26D179 !important;
 }
 
 .dark-hover-text:hover {

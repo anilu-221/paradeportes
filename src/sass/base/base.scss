@@ -1,9 +1,9 @@
 .primary-hover:hover{
-	background-color: $primary;
+	background-color: $primary !important;
 }
 
 .secondary-hover:hover{
-	background-color: $secondary;
+	background-color: $secondary !important;
 }
 
 .dark-hover:hover{
@@ -11,11 +11,11 @@
 }
 
 .primary-hover-text:hover{
-	color: $primary;
+	color: $primary !important;
 }
 
 .secondary-hover-text:hover{
-	color: $secondary;
+	color: $secondary !important;
 }
 
 .dark-hover-text:hover{

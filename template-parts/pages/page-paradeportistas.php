@@ -418,7 +418,9 @@ get_header();
 																$name           = $paradeporte->name;
 																$paradeporte_id = $paradeporte->term_id;
 																?>
-																<?php echo esc_html( $name ); ?>
+																<a class="text-decoration-none text-dark primary-hover-text" href="<?php echo esc_url( get_term_link( $paradeporte->term_id ) ); ?>">
+																	<?php echo esc_html( $name ); ?>
+																</a>
 																<?php
 															}
 														}

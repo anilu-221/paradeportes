@@ -50,10 +50,11 @@ if ( $paradeporte_logo_id ) {
 	<?php
 	$today                  = gmdate( 'Ymd' );
 	$eventos_proximos_args  = array(
-		'post_type'  => 'evento',
-		'orderby'    => 'meta_value_num',
-		'meta_key'   => 'fecha', //phpcs:ignore
-		'meta_query' => array( //phpcs:ignore
+		'posts_per_page' => 3,
+		'post_type'      => 'evento',
+		'orderby'        => 'meta_value_num',
+		'meta_key'       => 'fecha', //phpcs:ignore
+		'meta_query'     => array( //phpcs:ignore
 			array(
 				'key'     => 'fecha',
 				'value'   => $today,
@@ -61,7 +62,7 @@ if ( $paradeporte_logo_id ) {
 				'type'    => 'DATE',
 			),
 		),
-		'tax_query'  => array( //phpcs:ignore
+		'tax_query'      => array( //phpcs:ignore
 			array(
 				'taxonomy' => 'paradeporte',
 				'field'    => 'slug',
@@ -97,12 +98,13 @@ if ( $paradeporte_logo_id ) {
 <!--Eventos Pasados-->
 	<!--Query-->
 	<?php
-	$today                  = gmdate( 'Ymd' );
-	$eventos_proximos_args  = array(
-		'post_type'  => 'evento',
-		'orderby'    => 'meta_value_num',
-		'meta_key'   => 'fecha', //phpcs:ignore
-		'meta_query' => array( //phpcs:ignore
+	$today                 = gmdate( 'Ymd' );
+	$eventos_pasados_args  = array(
+		'posts_per_page' => 3,
+		'post_type'      => 'evento',
+		'orderby'        => 'meta_value_num',
+		'meta_key'       => 'fecha', //phpcs:ignore
+		'meta_query'     => array( //phpcs:ignore
 			array(
 				'key'     => 'fecha',
 				'value'   => $today,
@@ -110,7 +112,7 @@ if ( $paradeporte_logo_id ) {
 				'type'    => 'DATE',
 			),
 		),
-		'tax_query'  => array( //phpcs:ignore
+		'tax_query'       => array( //phpcs:ignore
 			array(
 				'taxonomy' => 'paradeporte',
 				'field'    => 'slug',
@@ -118,11 +120,11 @@ if ( $paradeporte_logo_id ) {
 			),
 		),
 	);
-	$eventos_proximos_query = new WP_Query( $eventos_proximos_args );
+	$eventos_pasados_query = new WP_Query( $eventos_pasados_args );
 	?>
 	<!--Content-->
 	<?php
-	if ( $eventos_proximos_query->have_posts() ) {
+	if ( $eventos_pasados_query->have_posts() ) {
 		?>
 		<div class="container my-4">
 			<div class="row">
@@ -131,8 +133,8 @@ if ( $paradeporte_logo_id ) {
 					<a href="/evento?paradeporte=<?php echo esc_attr( $paradeporte_slug ); ?>" class="btn btn-sm btn-primary ms-3 mb-2">Ver Todos</a>
 				</div>
 				<?php
-				while ( $eventos_proximos_query->have_posts() ) {
-					$eventos_proximos_query->the_post();
+				while ( $eventos_pasados_query->have_posts() ) {
+					$eventos_pasados_query->the_post();
 					paradeportes_eventos_card( get_the_ID() );
 				}
 				wp_reset_postdata();
@@ -146,8 +148,9 @@ if ( $paradeporte_logo_id ) {
 	<!--Query-->
 	<?php
 	$posts_args  = array(
-		'post_type' => 'post',
-		'tax_query' => array( //phpcs:ignore
+		'posts_per_page' => 6,
+		'post_type'      => 'post',
+		'tax_query'      => array( //phpcs:ignore
 			array(
 				'taxonomy' => 'paradeporte',
 				'field'    => 'slug',
@@ -180,8 +183,9 @@ if ( $paradeporte_logo_id ) {
 	<!--Query-->
 	<?php
 	$paradeportistas_args  = array(
-		'post_type' => 'paradeportista',
-		'tax_query' => array( //phpcs:ignore
+		'posts_per_page' => 18,
+		'post_type'      => 'paradeportista',
+		'tax_query'      => array( //phpcs:ignore
 			array(
 				'taxonomy' => 'paradeporte',
 				'field'    => 'slug',
