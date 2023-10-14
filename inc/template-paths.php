@@ -56,13 +56,18 @@ function paradeportes_archive_templates( $archive ) {
 add_filter( 'archive_template', 'paradeportes_archive_templates' );
 
 /**
- * Template for Paradeportistas Page
+ * Template for Paradeportistas and Paradeportes Page
  *
  * @param string $template template variable.
  */
 function paradeportes_page_template( $template ) {
 	if ( is_page( 'paradeportistas' ) ) {
 		$template = PLUGIN_PATH . '/template-parts/pages/page-paradeportistas.php';
+		return $template;
+	}
+	if ( is_page( 'paradeportes' ) ) {
+		$template = PLUGIN_PATH . '/template-parts/pages/page-paradeportes.php';
+		return $template;
 	}
 	return $template;
 }

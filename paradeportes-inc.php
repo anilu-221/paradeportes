@@ -18,9 +18,11 @@ define( 'PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 /** Requires */
+require_once PLUGIN_PATH . '/inc/custom-pages.php';
 require_once PLUGIN_PATH . '/inc/acf-blocks/acf-blocks-settings.php';
 require_once PLUGIN_PATH . '/inc/custom-post-types.php';
 require_once PLUGIN_PATH . '/inc/files.php';
+require_once PLUGIN_PATH . '/inc/login-page.php';
 require_once PLUGIN_PATH . '/inc/template-paths.php';
 require_once PLUGIN_PATH . '/inc/theme-functions.php';
 

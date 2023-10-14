@@ -18,7 +18,9 @@
 	&__wrapper-a{
 		text-decoration: none;
 		color: #fff !important;
-		font-size: 1.4rem;
+		@include media-breakpoint-up(lg){
+			font-size: 1.4rem;
+		}
 	}
 
 	&__logo{

@@ -7,7 +7,7 @@
     "icon": "lista-paradeportes",
     "keywords": ["paradeportes", "lista"],
     "acf": {
-        "mode": "preview",
+        "mode": "edit",
         "renderTemplate": "lista-paradeportes.php"
     },
 	"supports": {

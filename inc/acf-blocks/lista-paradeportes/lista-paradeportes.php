@@ -34,13 +34,13 @@ $paradeportes = get_terms(
 	<?php
 	if ( $paradeportes ) {
 		?>
-		<div class="container-fluid">
+		<div class="container-fluid px-0">
 			<div class="row">
 				<?php
 				foreach ( $paradeportes as $paradeporte ) {
 					$logo = get_field( 'logo_de_paradeporte', 'paradeporte_' . $paradeporte->term_id );
 					?>
-					<div class="col-6 col-lg-3">
+					<div class="col-lg-3 my-2">
 						<a class="lista-paradeportes__wrapper-a" href="<?php echo esc_url( get_term_link( $paradeporte->term_id ) ); ?>">
 							<div class="lista-paradeportes__wrapper">
 								<div>
