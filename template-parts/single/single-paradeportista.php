@@ -131,25 +131,29 @@ $producto   = get_field( 'producto_asociado' );
 							$logo           = get_field( 'logo_de_paradeporte', 'paradeporte_' . $paradeporte->term_id );
 							if ( $logo ) {
 								?>
-								<div class="d-flex mt-3">
-									<?php
-									if ( $logo ) {
-										echo wp_get_attachment_image(
-											$logo,
-											'Medium',
-											false,
-											array(
-												'class' => 'paradeportista__deporte-logo bg-primary',
-											)
-										);
-									}
-									?>
-									<h3 class="text-primary"><?php echo esc_html( $name ); ?></h3>
-								</div>
+								<a class="text-decoration-none" href="<?php echo esc_url( get_term_link( $paradeporte->term_id ) ); ?>">
+									<div class="d-flex mt-3">
+										<?php
+										if ( $logo ) {
+											echo wp_get_attachment_image(
+												$logo,
+												'Medium',
+												false,
+												array(
+													'class' => 'paradeportista__deporte-logo bg-primary',
+												)
+											);
+										}
+										?>
+										<h3 class="text-primary"><?php echo esc_html( $name ); ?></h3>
+									</div>
+								</a>
 								<?php
 							} else {
 								?>
-								<h3 class="text-primary"><?php echo esc_html( $name ); ?></h3>
+								<a class="text-decoration-none" href="<?php echo esc_url( get_term_link( $paradeporte->term_id ) ); ?>">
+									<h3 class="text-primary"><?php echo esc_html( $name ); ?></h3>
+								</a>
 								<?php
 							}
 						}

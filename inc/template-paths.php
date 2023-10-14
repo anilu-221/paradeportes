@@ -39,13 +39,14 @@ function paradeportes_archive_templates( $archive ) {
 	global $post;
 
 	/** Paradeporte Archive */
-	if ( is_tax( 'paradeporte' ) && 'evento' !== $post->post_type ) {
+	if ( is_tax( 'paradeporte' ) && ! is_post_type_archive( 'evento' ) ) {
 		if ( file_exists( PLUGIN_PATH . '/template-parts/archives/archive-paradeporte.php' ) ) {
 			return PLUGIN_PATH . '/template-parts/archives/archive-paradeporte.php';
 		}
 	}
+
 	/** Evento Archive */
-	if ( is_archive( 'evento' ) ) {
+	if ( is_post_type_archive( 'evento' ) ) {
 		if ( file_exists( PLUGIN_PATH . '/template-parts/archives/archive-evento.php' ) ) {
 			return PLUGIN_PATH . '/template-parts/archives/archive-evento.php';
 		}
