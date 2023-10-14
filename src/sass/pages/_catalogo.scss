@@ -5,6 +5,11 @@
 		}
 	}
 
+	&__table-header{
+		background-color: #eef2f3;
+    	color: $dark !important;
+	}
+
 	&__wrapper{
 		@include media-breakpoint-up(lg){
 			border-radius: .375rem;
@@ -24,6 +29,15 @@
 			padding-bottom: 15px;
 			border-radius: 28px !important;
 		}
+	}
+
+	&__select:focus{
+		background-color: #363d43;
+		color: #dad1d1;
+	}
+
+	&__select option{
+		color: #fff !important;
 	}
 
 	&__select-container{

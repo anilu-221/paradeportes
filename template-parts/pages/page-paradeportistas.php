@@ -336,7 +336,7 @@ get_header();
 							?>
 							<!--Table--> 
 								<table class="table catalogo__table bg-white">
-									<thead class="bg-primary text-white">
+									<thead class="catalogo__table-header">
 										<tr class="text-center">
 											<th class="catalogo__th" scope="col"></th>
 											<th class="catalogo__th" scope="col">Paradeportista</th>

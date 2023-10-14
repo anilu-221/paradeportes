@@ -1,8 +1,6 @@
 /** Bootstrap **/
+@import 'sass/base/bootstrap_variables.scss';
 @import "~bootstrap/scss/bootstrap";
-@import "~bootstrap/scss/functions.scss";
-@import "~bootstrap/scss/variables.scss";
-@import "~bootstrap/scss/mixins/breakpoints.scss";
 
 /** Components **/
 @import "sass/components/buttons";
