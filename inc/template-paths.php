@@ -37,20 +37,20 @@ add_filter( 'single_template', 'paradeportes_single_templates' );
  */
 function paradeportes_archive_templates( $archive ) {
 	global $post;
+
+	/** Paradeporte Archive */
+	if ( is_tax( 'paradeporte' ) && 'evento' !== $post->post_type ) {
+		if ( file_exists( PLUGIN_PATH . '/template-parts/archives/archive-paradeporte.php' ) ) {
+			return PLUGIN_PATH . '/template-parts/archives/archive-paradeporte.php';
+		}
+	}
 	/** Evento Archive */
-	if ( 'evento' === $post->post_type ) {
+	if ( is_archive( 'evento' ) ) {
 		if ( file_exists( PLUGIN_PATH . '/template-parts/archives/archive-evento.php' ) ) {
 			return PLUGIN_PATH . '/template-parts/archives/archive-evento.php';
 		}
 	}
 
-	/** Paradeporte Archive */
-	if ( is_tax( 'paradeporte' ) ) {
-		if ( file_exists( PLUGIN_PATH . '/template-parts/archives/archive-paradeporte.php' ) ) {
-			return PLUGIN_PATH . '/template-parts/archives/archive-paradeporte.php';
-		}
-	}
-	return $archive;
 }
 add_filter( 'archive_template', 'paradeportes_archive_templates' );
 

@@ -22,6 +22,8 @@ if ( $paradeporte ) {
 			'terms'    => $paradeporte,
 		),
 	);
+	$paradeporte_obj       = get_term_by( 'slug', $paradeporte, 'paradeporte' );
+	$content               = 'Eventos: ' . $paradeporte_obj->name;
 }
 $eventos_proximos_args  = array(
 	'post_type'  => 'evento',

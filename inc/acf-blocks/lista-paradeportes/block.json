@@ -3,7 +3,7 @@
     "title": "Lista Paradeportes",
     "description": "Lista de Lista Paradeportes",
     "style": [ "file:./lista-paradeportes.css" ],
-    "category": "paradeportes",
+    "category": "widgets",
     "icon": "lista-paradeportes",
     "keywords": ["paradeportes", "lista"],
     "acf": {

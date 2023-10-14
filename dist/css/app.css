@@ -10573,6 +10573,31 @@ textarea.form-control-lg {
   min-height: 250px;
 }
 
+.lista-paradeportes__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #171D29;
+  border-radius: 1rem;
+  padding: 2rem 1rem;
+  width: 100%;
+  height: 100%;
+  transition: background-color 200ms ease-in;
+}
+.lista-paradeportes__wrapper:hover {
+  background-color: #26263A;
+}
+.lista-paradeportes__wrapper-a {
+  text-decoration: none;
+  color: #fff !important;
+  font-size: 1.4rem;
+}
+.lista-paradeportes__logo {
+  width: 50px;
+  height: auto;
+  margin: auto;
+}
+
 .paradeportes-pagination {
   display: flex;
   justify-content: center;

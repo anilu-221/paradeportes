@@ -1,0 +1,29 @@
+.lista-paradeportes{
+	&__wrapper{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: $dark;
+		border-radius: 1rem;
+		padding: 2rem 1rem;
+		width: 100%;
+		height: 100%;
+		transition: background-color 200ms ease-in;
+	}
+
+	&__wrapper:hover{
+		background-color: #26263A;
+	}
+
+	&__wrapper-a{
+		text-decoration: none;
+		color: #fff !important;
+		font-size: 1.4rem;
+	}
+
+	&__logo{
+		width: 50px;
+		height: auto;
+		margin: auto;
+	}
+}

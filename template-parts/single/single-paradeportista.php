@@ -133,14 +133,16 @@ $producto   = get_field( 'producto_asociado' );
 								?>
 								<div class="d-flex mt-3">
 									<?php
-									echo wp_get_attachment_image(
-										$logo,
-										'Medium',
-										false,
-										array(
-											'class' => 'paradeportista__deporte-logo bg-primary',
-										)
-									);
+									if ( $logo ) {
+										echo wp_get_attachment_image(
+											$logo,
+											'Medium',
+											false,
+											array(
+												'class' => 'paradeportista__deporte-logo bg-primary',
+											)
+										);
+									}
 									?>
 									<h3 class="text-primary"><?php echo esc_html( $name ); ?></h3>
 								</div>
